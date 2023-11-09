@@ -12,14 +12,14 @@ public class Restaurant {
         this.maximumCapacity = maximumCapacity;
     }
 
-    public synchronized void storeVegetable(Vegetable vegetable) throws InterruptedException{
-        if (vegetableCollection.size() > maximumCapacity){
+    public synchronized void storeVegetable(Vegetable vegetable ) throws InterruptedException{
+        if (vegetableCollection.size() >= maximumCapacity){
             wait();
         }
         vegetableCollection.add(vegetable);
     }
 
-    public synchronized void eatVegetable(Vegetable vegetable) throws InterruptedException{
+    public synchronized void eatVegetable(Vegetable vegetable ) throws InterruptedException{
         if (vegetableCollection.size() >= 0) {
             wait();
         }

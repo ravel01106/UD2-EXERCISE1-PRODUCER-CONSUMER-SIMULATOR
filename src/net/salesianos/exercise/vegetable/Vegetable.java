@@ -29,7 +29,7 @@ public class Vegetable {
 
 
     private String selectName(){
-        int indexRandom = (int)(Math.floor(Math.random()*(VEGETABLE_NAMES.length-0+1)+0));
+        int indexRandom = (int)(Math.floor(Math.random()*((VEGETABLE_NAMES.length - 1)-0+1)+0));
         return VEGETABLE_NAMES[indexRandom];
     }
 
