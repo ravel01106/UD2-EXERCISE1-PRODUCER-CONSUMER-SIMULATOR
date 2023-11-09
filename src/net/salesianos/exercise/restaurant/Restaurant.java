@@ -17,12 +17,16 @@ public class Restaurant {
             wait();
         }
         vegetableCollection.add(vegetable);
+        notifyAll();
+        System.out.println("\t-> Estado del almacen: " + this.vegetableCollection.size());
     }
 
     public synchronized void eatVegetable(Vegetable vegetable ) throws InterruptedException{
-        if (vegetableCollection.size() >= 0) {
+        if (vegetableCollection.size() == 0) {
             wait();
         }
         vegetableCollection.remove(vegetable);
+        notifyAll();
+        System.out.println("\t-> Estado del almacen: " + this.vegetableCollection.size());
     }
 }
