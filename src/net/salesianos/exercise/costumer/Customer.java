@@ -4,13 +4,13 @@ import net.salesianos.exercise.restaurant.Restaurant;
 import net.salesianos.exercise.vegetable.Vegetable;
 
 public class Customer extends Thread{
-    private String name;
+    private String nameCustomer;
     private int quantityVegetablesConsumed;
     private int vegetablesConsumed;
     private Restaurant restaurant;
 
     public Customer(String name, int quantityVegetablesConsumed, Restaurant restaurant){
-        this.name = name;
+        this.nameCustomer = name;
         this.quantityVegetablesConsumed = quantityVegetablesConsumed;
         this.vegetablesConsumed = 0;
         this.restaurant = restaurant;
@@ -26,9 +26,10 @@ public class Customer extends Thread{
             try {
                 Vegetable vegatable = new Vegetable();
                 Thread.sleep(calculateTimeConsumtion()*100);
-                restaurant.eatVegetable(vegatable);
+                restaurant.eatVegetable();
                 this.vegetablesConsumed++;
-                System.out.println("-> El cliente " + this.name + " está consumiendo un vegetal.");
+                System.out.println("-> El cliente " + this.nameCustomer + " está consumiendo un vegetal.");
+                System.out.println("\t-> Estado del almacen: " + restaurant.getVegetableCollectionSize());
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -38,6 +39,12 @@ public class Customer extends Thread{
     public int getVegetablesConsumed() {
         return vegetablesConsumed;
     }
+
+    public String getNameCustomer() {
+        return nameCustomer;
+    }
+
+    
 
     
 
