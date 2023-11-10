@@ -1,7 +1,6 @@
-package net.salesianos.exercise.costumer;
+package net.salesianos.exercise.customer;
 
 import net.salesianos.exercise.restaurant.Restaurant;
-import net.salesianos.exercise.vegetable.Vegetable;
 
 public class Customer extends Thread{
     private String nameCustomer;
@@ -24,7 +23,6 @@ public class Customer extends Thread{
     public void run(){
         for (int i = 0; i < quantityVegetablesConsumed; i++) {
             try {
-                Vegetable vegatable = new Vegetable();
                 Thread.sleep(calculateTimeConsumtion()*100);
                 restaurant.eatVegetable();
                 this.vegetablesConsumed++;
