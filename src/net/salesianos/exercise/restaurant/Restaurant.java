@@ -1,11 +1,13 @@
 package net.salesianos.exercise.restaurant;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
+//import java.util.ArrayList;
 
 import net.salesianos.exercise.vegetable.Vegetable;
 
 public class Restaurant {
-    private ArrayList<Vegetable> vegetableCollection = new ArrayList<>();
+    private Queue<Vegetable> vegetableCollection = new LinkedList<>();
     private int maximumCapacity;
 
     public Restaurant(int maximumCapacity){
@@ -13,7 +15,7 @@ public class Restaurant {
     }
 
     public synchronized void storeVegetable(Vegetable vegetable ) throws InterruptedException{
-        if (vegetableCollection.size() >= maximumCapacity){
+        while (vegetableCollection.size() >= maximumCapacity){
             wait();
         }
         vegetableCollection.add(vegetable);
@@ -21,10 +23,10 @@ public class Restaurant {
     }
 
     public synchronized void eatVegetable() throws InterruptedException{
-        if (vegetableCollection.size() == 0) {
+        while (vegetableCollection.isEmpty()) {
             wait();
         }
-        vegetableCollection.remove(vegetableCollection.size() - 1);
+        vegetableCollection.poll();
         notifyAll();
     }
 
