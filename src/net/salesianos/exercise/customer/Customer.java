@@ -23,11 +23,11 @@ public class Customer extends Thread{
     public void run(){
         for (int i = 0; i < quantityVegetablesConsumed; i++) {
             try {
-                Thread.sleep(calculateTimeConsumtion()*1000);
-                restaurant.eatVegetable();
+                int timeConsumtion = calculateTimeConsumtion();
+                System.out.println("\n-> The costumer " + this.nameCustomer + " is eating... will take " + timeConsumtion + " seconds...\n");
+                Thread.sleep(timeConsumtion*1000);
+                restaurant.eatVegetable(nameCustomer, timeConsumtion);
                 this.vegetablesConsumed++;
-                System.out.println("-> El cliente " + this.nameCustomer + " está consumiendo un vegetal.");
-                System.out.println("\t-> Estado del almacen: " + restaurant.getVegetableCollectionSize());
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

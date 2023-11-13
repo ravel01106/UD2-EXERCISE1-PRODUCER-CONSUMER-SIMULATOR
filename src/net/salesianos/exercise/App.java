@@ -10,7 +10,7 @@ import net.salesianos.exercise.utils.Utils;
 public class App {
 
     public static void main(String[] args){
-        Restaurant restaurant = new Restaurant(2);
+        Restaurant restaurant = new Restaurant(6);
         ArrayList<Farmer> farmerCollaction = new ArrayList<>();
         ArrayList<Customer> customerCollaction = new ArrayList<>();
 
@@ -27,7 +27,7 @@ public class App {
         customerCollaction.add(customerTwo);
         customerCollaction.add(customerThree);
 
-        System.out.println("\t-> Estado del almacen: " + restaurant.getVegetableCollectionSize());
+        System.out.println("\t-> Initial warehouse status: " + restaurant.getVegetableCollectionSize());
 
         for (Farmer farmer : farmerCollaction) {
             farmer.start();

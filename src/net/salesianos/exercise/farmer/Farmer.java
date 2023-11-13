@@ -22,11 +22,10 @@ public class Farmer  extends Thread{
         for (int i = 0; i < this.maximumPlanting; i++) {
             try {
                 Vegetable vegetable = new Vegetable();
+                System.out.println("\n-> A vegetable is growing... will take "+ vegetable.getGrowingTime() + " seconds..\n");
                 Thread.sleep(vegetable.getGrowingTime()*1000);
-                restaurant.storeVegetable(vegetable);
+                restaurant.storeVegetable(vegetable, this.nameFarmer);
                 this.vegetablesProduced++;
-                System.out.println("-> El granjero " + this.nameFarmer + " ha añadido una verdura al restaurante.");
-                System.out.println("\t-> Estado del almacen: " + restaurant.getVegetableCollectionSize());
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
