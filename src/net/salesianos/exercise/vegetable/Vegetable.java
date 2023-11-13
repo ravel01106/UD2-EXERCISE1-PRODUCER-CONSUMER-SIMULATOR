@@ -27,14 +27,13 @@ public class Vegetable {
         this.growingTime = calculateGrowingTime();
     }
 
-
     private String selectName(){
-        int indexRandom = (int)(Math.floor(Math.random()*((VEGETABLE_NAMES.length - 1)-0+1)+0));
+        int indexRandom = (int)(Math.floor(Math.random()*VEGETABLE_NAMES.length));
         return VEGETABLE_NAMES[indexRandom];
     }
 
     private int calculateGrowingTime(){
-        return (int)(Math.floor(Math.random()*(10-1+1)+1));
+        return (int)(Math.floor(Math.random()*11));
     }
 
     public String getName() {

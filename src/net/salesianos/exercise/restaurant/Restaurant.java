@@ -2,7 +2,6 @@ package net.salesianos.exercise.restaurant;
 
 import java.util.LinkedList;
 import java.util.Queue;
-//import java.util.ArrayList;
 
 import net.salesianos.exercise.vegetable.Vegetable;
 
@@ -15,7 +14,7 @@ public class Restaurant {
     }
 
     public synchronized void storeVegetable(Vegetable vegetable, String nameFarmer ) throws InterruptedException{
-        while (vegetableCollection.size() >= maximumCapacity){
+        while (vegetableCollection.size() == maximumCapacity){
             wait();
         }
         System.out.println("\n\n-> The farmer " + nameFarmer + " has added a " + vegetable.getName() + " in the restaurant.");

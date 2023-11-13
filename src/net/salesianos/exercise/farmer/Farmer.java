@@ -9,7 +9,6 @@ public class Farmer  extends Thread{
     private int vegetablesProduced;
     private Restaurant restaurant;
 
-
     public Farmer(String name, int maximumPlanting, Restaurant restaurant){
         this.nameFarmer = name;
         this.maximumPlanting = maximumPlanting;
@@ -40,5 +39,4 @@ public class Farmer  extends Thread{
         return nameFarmer;
     }
 
-    
 }
