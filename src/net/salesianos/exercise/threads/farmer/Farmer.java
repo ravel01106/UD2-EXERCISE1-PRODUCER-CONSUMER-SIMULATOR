@@ -1,7 +1,7 @@
-package net.salesianos.exercise.farmer;
+package net.salesianos.exercise.threads.farmer;
 
-import net.salesianos.exercise.restaurant.Restaurant;
-import net.salesianos.exercise.vegetable.Vegetable;
+import net.salesianos.exercise.objects.restaurant.Restaurant;
+import net.salesianos.exercise.objects.vegetable.Vegetable;
 
 public class Farmer  extends Thread{
     private String nameFarmer;

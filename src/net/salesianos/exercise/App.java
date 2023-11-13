@@ -2,9 +2,9 @@ package net.salesianos.exercise;
 
 import java.util.ArrayList;
 
-import net.salesianos.exercise.customer.Customer;
-import net.salesianos.exercise.farmer.Farmer;
-import net.salesianos.exercise.restaurant.Restaurant;
+import net.salesianos.exercise.objects.restaurant.Restaurant;
+import net.salesianos.exercise.threads.customer.Customer;
+import net.salesianos.exercise.threads.farmer.Farmer;
 import net.salesianos.exercise.utils.Utils;
 
 public class App {

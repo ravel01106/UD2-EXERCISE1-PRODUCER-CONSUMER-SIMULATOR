@@ -1,9 +1,9 @@
-package net.salesianos.exercise.restaurant;
+package net.salesianos.exercise.objects.restaurant;
 
 import java.util.LinkedList;
 import java.util.Queue;
 
-import net.salesianos.exercise.vegetable.Vegetable;
+import net.salesianos.exercise.objects.vegetable.Vegetable;
 
 public class Restaurant {
     private Queue<Vegetable> vegetableCollection = new LinkedList<>();

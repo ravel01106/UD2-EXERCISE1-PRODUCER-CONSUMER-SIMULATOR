@@ -1,4 +1,4 @@
-package net.salesianos.exercise.vegetable;
+package net.salesianos.exercise.objects.vegetable;
 
 public class Vegetable {
     final private static String[] VEGETABLE_NAMES = {

@@ -1,6 +1,6 @@
-package net.salesianos.exercise.customer;
+package net.salesianos.exercise.threads.customer;
 
-import net.salesianos.exercise.restaurant.Restaurant;
+import net.salesianos.exercise.objects.restaurant.Restaurant;
 
 public class Customer extends Thread{
     private String nameCustomer;
