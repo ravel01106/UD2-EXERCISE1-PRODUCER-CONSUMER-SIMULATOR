@@ -23,7 +23,7 @@ public class Customer extends Thread{
     public void run(){
         for (int i = 0; i < quantityVegetablesConsumed; i++) {
             try {
-                Thread.sleep(calculateTimeConsumtion()*100);
+                Thread.sleep(calculateTimeConsumtion()*1000);
                 restaurant.eatVegetable();
                 this.vegetablesConsumed++;
                 System.out.println("-> El cliente " + this.nameCustomer + " está consumiendo un vegetal.");

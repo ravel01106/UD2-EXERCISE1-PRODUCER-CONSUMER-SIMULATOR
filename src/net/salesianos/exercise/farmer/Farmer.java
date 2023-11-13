@@ -22,7 +22,7 @@ public class Farmer  extends Thread{
         for (int i = 0; i < this.maximumPlanting; i++) {
             try {
                 Vegetable vegetable = new Vegetable();
-                Thread.sleep(vegetable.getGrowingTime()*100);
+                Thread.sleep(vegetable.getGrowingTime()*1000);
                 restaurant.storeVegetable(vegetable);
                 this.vegetablesProduced++;
                 System.out.println("-> El granjero " + this.nameFarmer + " ha añadido una verdura al restaurante.");
