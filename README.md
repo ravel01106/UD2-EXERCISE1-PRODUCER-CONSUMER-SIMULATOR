@@ -1,18 +1,57 @@
-## Getting Started
+# Unit 2 - Exercise 1 - Producer consumer simulator
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## Description
 
-## Folder Structure
+In this project, we have created one or more producers or farmers, who will put vegetables, which were planted in their garden, in a restaurant. At the same time, one or more costumer will eat the vegetables that are in the restaurant.
 
-The workspace contains two folders by default, where:
+## Objects
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+The object classes we will need for this project are as follows:
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+### Vegetable class
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+This class creates an object that contains a name and a growth time. Each time we create an object vegetable we have a random name and a random growth time.
+To get it in a random way, we have the methods:
 
-## Dependency Management
+- **selectName()**.
+- **calculateGrowingTime()**.
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+### Restaurant class
+
+This class creates an object that has the following attributes:
+
+- **vegetableCollection:** A vegetable collection.
+- **maximumCapacity:** the maximum capacity of the collection.
+
+The methods contained in this object are:
+
+- **storeVegetable():** in this method we store the new vegetables harvested by the farmers until they reach the restaurant's capacity. If farmers want to bring in vegetables when the restaurant is full, they have to wait for a customer to eat a vegetable.
+- **eatVegetable():** in this method the customers eat the restaurant's vegetables. If the restaurant is empty, they have to wait for a farmer to bring in one.
+
+## Threads
+
+The threads that are to used in this project are:
+
+### Farmer thread
+
+This thread has the following attributes:
+
+- **nameFarmer:** the famer's name.
+- **maximumPlanting:** maximum number of times the farmer may plant.
+- **vegetablesProduced:** vegetables produced during the thread.
+- **restaurant:** the restaurant where vegetables are stored.
+
+This thread has a run method which, when we execute the program, will be what the thread will do.
+The thread will pick up a vegetable which will wait for it to grow and store it inside the restaurant. This will be repeated until the farmer reaches his maximum vegetable harvest time.
+
+### Customer thread
+
+This thread has the following attributes:
+
+- **nameCustomer:** the customer's name.
+- **quantityVegetablesConsumed:** maximum number of times the client may eat.
+- **vegetablesConsumed:** vegetables consumed during the thread.
+- **restaurant:** the restaurant where vegetables are stored.
+
+This thread has a run method which, when we execute the program, will be what the thread will do.
+The thread will pick up vegetables from restaurant which will be consumed at a random time. This action will be repeated until the maximum number of times they can eat is reached.
