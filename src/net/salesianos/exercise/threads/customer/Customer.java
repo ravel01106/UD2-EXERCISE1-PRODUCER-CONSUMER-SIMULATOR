@@ -16,7 +16,7 @@ public class Customer extends Thread{
     }
 
     public int calculateTimeConsumtion(){
-        return (int)(Math.floor(Math.random()*10));
+        return (int)(Math.floor(Math.random()*10+1));
     }
 
     @Override
