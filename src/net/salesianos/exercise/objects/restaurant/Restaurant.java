@@ -31,7 +31,7 @@ public class Restaurant {
         Vegetable vegetable = vegetableCollection.poll();
         System.out.println("\n\n-> The customer " + nameCustomer + " has consumed a " + vegetable.getName() + ".");
         System.out.println("\t-> The duration of vegetable consumed is " + timeConsumtion + " seconds.");
-                System.out.println("\t-> Warehouse status: " + vegetableCollection.size() + "\n");
+        System.out.println("\t-> Warehouse status: " + vegetableCollection.size() + "\n");
         notifyAll();
     }
 
