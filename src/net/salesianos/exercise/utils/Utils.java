@@ -7,20 +7,23 @@ import net.salesianos.exercise.threads.customer.Customer;
 import net.salesianos.exercise.threads.farmer.Farmer;
 
 public class Utils {
-    public static void printResultThreads(ArrayList<Farmer> farmerCollation, ArrayList<Customer> customerCollation, Restaurant restaurant){
+    public static void printResultThreads(ArrayList<Farmer> farmerCollection, ArrayList<Customer> customerCollection, Restaurant restaurant){
         int totalProduced = 0;
         int totalConsumed = 0;
-        System.out.println("---------------------RESULTADOS---------------------");
-        for (Farmer farmer : farmerCollation) {
-            System.out.println("\t-> Vegetales producidos por " + farmer.getNameFarmer() + " son: " + farmer.getVegetablesProduced());
+        System.out.println("--------------------------RESULT--------------------------\n");
+        System.out.println("\n--------------------------FARMER--------------------------\n");
+        for (Farmer farmer : farmerCollection) {
+            System.out.println("-> The quantity of vegetables produced by " + farmer.getNameFarmer() + " are: " + farmer.getVegetablesProduced());
             totalProduced += farmer.getVegetablesProduced();
         }
-        System.out.println("-> Los vegetales producidos en total son : " + totalProduced);
-        for (Customer customer : customerCollation) {
-            System.out.println("\t->Vegetales consumidos por " + customer.getNameCustomer() + " son: " + customer.getVegetablesConsumed());
+        System.out.println("-> Total quantity of vegetables produced: " + totalProduced);
+        System.out.println("\n\n-------------------------CUSTOMER-------------------------\n");
+        for (Customer customer : customerCollection) {
+            System.out.println("-> The quantity of vegetables consumed by " + customer.getNameCustomer() + " are: " + customer.getVegetablesConsumed());
             totalConsumed += customer.getVegetablesConsumed();
         }
-        System.out.println("-> Los vegetales consumidos en total son: " + totalConsumed);
-        System.out.println("-> Estado del almacen: " + restaurant.getVegetableCollectionSize());
+        System.out.println("-> Total quantity of vegetables consumed: " + totalConsumed);
+        System.out.println("-> Warehouse status: " + restaurant.getVegetableCollectionSize());
+        System.out.println("\n\n--------------------------RESULT--------------------------");
     }
 }
