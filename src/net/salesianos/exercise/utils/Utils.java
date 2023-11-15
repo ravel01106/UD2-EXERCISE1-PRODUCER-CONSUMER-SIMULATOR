@@ -26,4 +26,13 @@ public class Utils {
         System.out.println("-> Warehouse status: " + restaurant.getVegetableCollectionSize());
         System.out.println("\n\n--------------------------RESULT--------------------------");
     }
+    public static void printResultThreads(Farmer farmer, Customer customer, Restaurant restaurant){
+        System.out.println("--------------------------RESULT--------------------------\n");
+        System.out.println("\n--------------------------FARMER--------------------------\n");
+        System.out.println("-> The quantity of vegetables produced by " + farmer.getNameFarmer() + " are: " + farmer.getVegetablesProduced());
+        System.out.println("\n\n-------------------------CUSTOMER-------------------------\n");
+        System.out.println("-> The quantity of vegetables consumed by " + customer.getNameCustomer() + " are: " + customer.getVegetablesConsumed() + "\n");
+        System.out.println("-> Warehouse status: " + restaurant.getVegetableCollectionSize());
+        System.out.println("\n\n--------------------------RESULT--------------------------");
+    }
 }

@@ -33,7 +33,7 @@ public class Vegetable {
     }
 
     private int calculateGrowingTime(){
-        return (int)(Math.floor(Math.random()*10+1));
+        return (int)(Math.floor(Math.random()*5+1));
     }
 
     public String getName() {
